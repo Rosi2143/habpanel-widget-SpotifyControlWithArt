@@ -1,0 +1,70 @@
+{
+    "template": "<style media=\"screen\" type=\"text/css\">\n  .spotifybutton {width: 90%; height: 1.5em; border: 0; color: lightgrey; background-color: transparent;}  \n  \n  .media_fanart{\n        position:relative;\n        top:90;left:0;\n  \t\t\topacity: 1;\n        filter:grayscale(20%) brightness(70%);\n        z-index:1;\n        outline:#fff solid 0px;\n        transition-duration:3s;\n        box-shadow:10 0 1px #ffffffbb,0 0 2px #ffffffbb,0 0 5px #ffffffbb,0 0 10px #ccccccbb,0 0 20px #ccccccbb,0 0 22px #ccccccbb,0 0 25px #ccccccbb,0 0 33px #ccccccbb}\n    \n   \n  .media_title{\n        font-size:20px;\n        position:relative;\n\t\t\t\topacity: 1;\n        top:0px;\n        text-align:left;\n        text-transform:uppercase;\n        font-weight:normal;\n        z-index:3;\n        background-color:transparent;\n        color:lightgrey;\n        letter-spacing:2px;\n        white-space:nowrap;\n        overflow:hidden;\n        text-overflow:ellipsis;padding-top:0px;\n        padding-bottom:0px}\n        \n  .media_artist{\n  \t\t\ttop:100;left:0;\n        font-size:12px;\n        position:relative;\n\t\t\t\topacity: 1;\n        top:0px;\n        text-align:left;\n        text-transform:uppercase;\n        font-weight:normal;\n        z-index:3;\n        background-color:transparent;\n        color:lightgrey;\n        letter-spacing:2px;\n        white-space:nowrap;\n        overflow:hidden;\n        text-overflow:ellipsis;padding-top:0px;\n        padding-bottom:0px}\n </style>\n    \n  <div class=\"media_title\" \n       ng-if=\"itemValue(config.media_title).toUpperCase() != 'UNDEF'\">\n        {{itemValue(config.media_title)}}\n  </div>\n  <div class=\"media_artist\" \n        ng-if=\"itemValue(config.media_artist).toUpperCase() != 'UNDEF'\">\n        {{itemValue(config.media_artist) + \" \"}}\n  </div>\n\t<hr style=\"margin: 3px 0\"></hr>\n  <img src=\"data:image/gif;base64,R0lGODlhAAXQAoAAAAAAAP///ywAAAAAAAXQAgAC/4SPqcvtD6OctNqLs968+w+G4kiW5omm6sq27gvH8kzX9o3n+s73/g8MCofEovGITCqXzKbzCY1Kp9Sq9YrNarfcrvcLDovH5LL5jE6r1+y2+w2Py+f0uv2Oz+v3/L7/DxgoOEhYaHiImKi4yNjo+AgZKTlJWWl5iZmpucnZ6fkJGio6SlpqeoqaqrrK2ur6ChsrO0tba3uLm6u7y9vr+wscLDxMXGx8jJysvMzc7PwMHS09TV1tfY2drb3N3e39DR4uPk5ebn6Onq6+zt7u/g4fLz9PX29/j5+vv8/f7/8PMKDAgQQLGjyIMKHChQwbOnwIMaLEiRQrWryIMaPGjf8cO3r8CDKkyJEkS5o8iTKlypUsW7p8CTOmzJk0a9q8iTOnzp08e/r8CTSo0KFEixo9ijSp0qVMmzp9CjWq1KlUq1q9ijWr1q1cu3r9Cjas2LFky5o9izat2rVs27p9Czeu3Ll069q9izev3r18+/r9Cziw4MGECxs+jDix4sWMGzt+DDmy5MmUK1u+jDmz5s2cO3v+DDq06NGkS5s+jTq16tWsW7t+DTu27Nm0a9u+jTu37t28e/v+DTy48OHEixs/jjy58uXMmzt/Dj269OnUq1u/jj279u3cu3v/Dj68+PHky5s/jz69+vXs27t/Dz++/Pn069u/jz+//v38+/v//w9ggAIOSGCBBh6IYIIKLshggw4+CGGEEk5IYYUWXohhhhpuyGGHHn4IYogijkhiiSaeiGKKKq7IYosuvghjjDLOSGONNt6IY4467shjjz7+CGSQQg5JZJFGHolkkkouyWSTTj4JZZRSTklllVZeiWWWWm7JZZdefglmmGKOSWaZZp6JZppqrslmm26+CWeccs5JZ5123olnnnruyWeffv4JaKCCDkpooYYeimiiii7KaKOOPgpppJJOSmmlll6Kaaaabsppp55+Cmqooo5Kaqmmnopqqqquymqrrr4Ka6yyzkprrbbeimuuuu7Ka6++/gpssMIOS2yxxh6LbLLK/y7LbLPOPgtttNJOS2211l6Lbbbabsttt95+C2644o5Lbrnmnotuuuquy2677r4Lb7zyzktvvfbei2+++u7Lb7/+/gtwwAIPTHDBBh+McMIKL8xwww4/DHHEEk9MccUWX4xxxhpvzHHHHn8Mcsgij0xyySafjHLKKq/McssuvwxzzDLPTHPNNt+Mc84678xzzz7/DHTQQg9NdNFGH4100kovzXTTTj8NddRST0111VZfjXXWWm/Ndddefw122GKPTXbZZp+Ndtpqr812226/DXfccs9Nd91234133nrvzXfffv8NeOCCD0544YYfjnjiii/OeOOOPw555JJPTnnllv9fjnnmmm/Oeeeefw566KKPTnrppp+Oeuqqr856666/Dnvsss9Oe+2234577rrvznvvvv8OfPDCD0988cYfj3zyyi/PfPPOPw999NJPT3311l+Pffbab899995/D3744o9Pfvnmn49++uqvz3777r8Pf/zyz09//fbfj3/++u/Pf//+/w/AAApwgAQsoAEPiMAEKnCBDGygAx8IwQhKcIIUrKAFL4jBDGpwgxzsoAc/CMIQinCEJCyhCU+IwhSqcIUsbKELXwjDGMpwhjSsoQ1viMMc6nCHPOyhD38IxCAKcYhELKIRj4jEJCpxiUxsohOfCMUoSnGKVKyiFa+IxSz/anGLXOyiF78IxjCKcYxkLKMZz4jGNKpxjWxsoxvfCMc4ynGOdKyjHe+IxzzqcY987KMf/wjIQApykIQspCEPichEKnKRjGykIx8JyUhKcpKUrKQlL4nJTGpyk5zspCc/CcpQinKUpCylKU+JylSqcpWsbKUrXwnLWMpylrSspS1victc6nKXvOylL38JzGAKc5jELKYxj4nMZCpzmcxspjOfCc1oSnOa1KymNa+JzWxqc5vc7KY3vwnOcIpznOQspznPic50qnOd7GynO98Jz3jKc570rKc974nPfOpzn/zspz//CdCACnSgBC2oQQ+K0IQqdKEMbahDHwrRiEp0WaIUrahFL4rRjGp0oxztqEc/CtKQinSkJC2pSU+K0pSqdKUsbalLXwrTmMp0pjStqU1vitOc6nSnPO2pT38K1KAKdahELapRj4rUpCp1qUxtqlOfCtWoJqMAADs=\" \n       class=\"media_fanart\" width=\"95%\" height=\"95%\" ng-if=\"itemValue(config.media_title).toUpperCase() == 'UNDEF'\">\n  </img>\n\t<img src=\"{{itemValue(config.media_art)}}\" class=\"media_fanart\" width=\"95%\" height=\"95%\" ng-if=\"itemValue(config.media_title)!='UNDEF'\">\n  </img>\n\t<hr style=\"margin: 3px 0\"></hr>\n\t<div class=\"row\" style=\"border-top: 0px solid white; padding-top: 0px; background-color: transparent;\">\n      <div class=\"col-sm-2 modgrid\" ng-if=\"itemValue(config.media_player_shuffle).toUpperCase() != 'ON'\">\n         <button class=\"spotifybutton\" style=\"background-image: url(/static/spotify/btn_shuffle.png); background-size: contain; background-repeat: no-repeat;background-position: center center\" \n            ng-click=   \"sendCmd(config.media_player_shuffle, 'ON')\">\n         </button>\n    \t</div>\n      <div class=\"col-sm-2 modgrid\" ng-if=\"itemValue(config.media_player_shuffle).toUpperCase() == 'ON'\">\n         <button class=\"spotifybutton\" style=\"background-image: url(/static/spotify/btn_shuffle_ON.png); background-size: contain; background-repeat: no-repeat;background-position: center center\" \n            ng-click=   \"sendCmd(config.media_player_shuffle, 'OFF')\">\n         </button>\n    \t</div>\n    \t<div class=\"col-sm-2 modgrid\">\n         <button class=\"spotifybutton\" style=\"background-image: url(/static/spotify/btn_prev.png); background-size: contain; background-repeat: no-repeat;background-position: center center\" \n            ng-click=\"sendCmd(config.media_player, 'PREVIOUS')\">\n         </button>\n      </div>\t\n   \t\t<div class=\"col-sm-3 modgrid\" ng-if=\"itemValue(config.media_player).toUpperCase() != 'PLAY'\">\n       \t\t<button class=\"spotifybutton\" style=\"background-image: url(/static/spotify/btn_play.png); background-size: contain; background-repeat: no-repeat;background-position: center center\" \n           \tng-click=\"sendCmd(config.media_player, 'PLAY')\">\n           </button>     \n\t\t\t</div>\n  \t\t<div class=\"col-sm-3 modgrid\" ng-if=\"itemValue(config.media_player).toUpperCase() == 'PLAY'\">\n       \t\t<button class=\"spotifybutton\" style=\"background-image: url(/static/spotify/btn_pause.png); background-size: contain; background-repeat: no-repeat;background-position: center center\" \n           \tng-click=\"sendCmd(config.media_player, 'PAUSE')\">\n           </button>     \n\t\t\t</div>\n     \t<div class=\"col-sm-2 modgrid\">\n         <button class=\"spotifybutton\" style=\"background-image: url(/static/spotify/btn_next.png); background-size: contain; background-repeat: no-repeat;background-position: center center\" \n            ng-click=\"sendCmd(config.media_player, 'NEXT')\">\n         </button>\n    \t</div>\n\n      <div class=\"col-sm-2 modgrid\" ng-if=\"itemValue(config.media_player_repeat).toUpperCase() == 'OFF'\">\n         <button class=\"spotifybutton\" style=\"background-image: url(/static/spotify/btn_repeat.png); background-size: contain; background-repeat: no-repeat;background-position: center center\" \n            ng-click=\"sendCmd(config.media_player_repeat, 'CONTEXT')\">\n         </button>\n   \t\t</div>\n      <div class=\"col-sm-2 modgrid\" ng-if=\"itemValue(config.media_player_repeat).toUpperCase() == 'CONTEXT'\">\n         <button class=\"spotifybutton\" style=\"background-image: url(/static/spotify/btn_repeat_ON.png); background-size: contain; background-repeat: no-repeat;background-position: center center\" \n            ng-click=\"sendCmd(config.media_player_repeat, 'TRACK')\">\n         </button>\n   \t\t</div>\n      <div class=\"col-sm-2 modgrid\" ng-if=\"itemValue(config.media_player_repeat).toUpperCase() == 'TRACK'\">\n         <button class=\"spotifybutton\" style=\"background-image: url(/static/spotify/btn_repeat_one_ON.png); background-size: contain; background-repeat: no-repeat;background-position: center center\" \n            ng-click=\"sendCmd(config.media_player_repeat, 'OFF')\">\n         </button>\n   \t\t</div>\n  </div>\n\t<hr style=\"margin: 3px 0\"></hr>\n\t<div class=\"row\" style=\"border-top: 0px solid white; padding-top: 0px; background-color: transparent;\">\n    <div class=\"col-sm-2 modgrid\">\n      <span style=\"color:lightgray; text-shadow: 0 0 8px slategray\">{{itemValue(config.media_player_track_progress) | date:'m:ss'}}</span>\n    </div>\n    <div class=\"col-sm-8 modgrid\" style=\"padding-top: 6px\">\n      <uib-progress style=\"height: 3px; background-color: slategray\" max=\"itemValue(config.media_player_track_duration)\">\n        <uib-bar style=\"background-color: lightgray\" value=\"itemValue(config.media_player_track_progress)\"></uib-bar>\n      </uib-progress>\n    </div>\n    <div class=\"col-sm-2 modgrid\">\n      <span style=\"color:lightgray; text-shadow: 0 0 8px slategray\">{{itemValue(config.media_player_track_duration) | date:'m:ss'}}</span>\n    </div>\n  </div>\n\t<hr style=\"margin: 3px 0\"></hr>\n\t<div class=\"row\" style=\"border-top: 0px solid white; padding-top: 0px; background-color: transparent;\">\n    <div class=\"col-sm-1 modgrid\" style=\"padding-top: 0px\" ng-if=\"itemValue(config.media_player_volume) != 0\">\n      <span style=\"border-radius: 25px; border: 1px; border-style: solid; border-color: transparent; width:10px; height: 10px; padding-left: 2px; padding-top: 0px; color:lightgray; font-size: 1.5em\"\n            class=\"glyphicon glyphicon-volume-off\" role=\"button\" ng-click=\"sendCmd(config.media_player_volume, '0')\"></span>\n\t\t</div>\n    <div class=\"col-sm-1 modgrid\" style=\"padding-top: 0px\" ng-if=\"itemValue(config.media_player_volume) == 0\">\n      <span style=\"border-radius: 25px; border: 1px; border-style: solid; border-color: transparent; width:10px; height: 10px; padding-left: 2px; padding-top: 0px; color:#1db954; font-size: 1.5em\"\n            class=\"glyphicon glyphicon-volume-off\" role=\"button\" ng-click=\"sendCmd(config.media_player_volume, '50')\"></span>\n\t\t</div>\n    <div class=\"col-sm-1 modgrid\" style=\"padding-top: 0px\">\n      <span style=\"border-radius: 25px; border: 1px; border-style: solid; border-color: transparent; width:10px; height: 10px; padding-left: 2px; padding-top: 0px; color:lightgray; font-size: 1.5em\"\n            class=\"glyphicon glyphicon-volume-down\" role=\"button\" ng-click=\"sendCmd(config.media_player_volume, +itemValue(config.media_player_volume)-10)\"></span>\n\t\t</div>\n    <div class=\"col-sm-8 modgrid\" style=\"padding-top: 8px\">\n      <uib-progress style=\"height: 3px; background-color: slategray\" max=\"100\">\n        <uib-bar style=\"background-color: lightgray\" value=\"itemValue(config.media_player_volume)\"></uib-bar>\n      </uib-progress>\n\t\t</div>\n    <div class=\"col-sm-2 modgrid\" style=\"padding-top: 0px\">\n      <span style=\"border-radius: 25px; border: 1px; border-style: solid; border-color: transparent; width:10px; height: 10px; padding-left: 2px; padding-top: 0px; color:lightgray; font-size: 1.5em\"\n            class=\"glyphicon glyphicon-volume-up\" role=\"button\" ng-click=\"sendCmd(config.media_player_volume,  +itemValue(config.media_player_volume)+10)\"></span>\n    </div>\n  </div>\n",
+    "settings": [
+        {
+            "type": "item",
+            "id": "media_title",
+            "label": "trackName",
+            "description": "Movie title or song track or artist can be used here.",
+            "default": "SN_DiningRoom_currenttitle"
+        },
+        {
+            "type": "item",
+            "id": "media_artist",
+            "label": "artistName",
+            "default": "SN_DiningRoom_currentartist"
+        },
+        {
+            "type": "item",
+            "id": "media_art",
+            "label": "albumImage",
+            "description": "Artwork for video or album covers for music can be shown here and will make up the background image of the widget.",
+            "default": "SN_DiningRoom_currentalbumart"
+        },
+        {
+            "type": "item",
+            "id": "media_player",
+            "label": "trackPlayer",
+            "description": "player item for player control (prev/play/pause/next)",
+            "default": "SN_DiningRoom_Controller"
+        },
+        {
+            "type": "item",
+            "id": "media_player_shuffle",
+            "label": "deviceShuffle",
+            "default": "OFF",
+            "description": "switch item for shuffle control (on/off)"
+        },
+        {
+            "type": "item",
+            "id": "media_player_repeat",
+            "label": "trackRepeat",
+            "default": "OFF",
+            "description": "switch item for repeat control (off/track/context)"
+        },
+        {
+            "type": "item",
+            "id": "media_player_track_duration",
+            "label": "trackDurationMs",
+            "default": "60000",
+            "description": "total duration of track in ms"
+        },
+        {
+            "type": "item",
+            "id": "media_player_track_progress",
+            "label": "trackProgressMs",
+            "default": "30000",
+            "description": "current progress of track in ms"
+        },
+        {
+            "type": "item",
+            "id": "media_player_volume",
+            "label": "deviceVolume",
+            "default": "50",
+            "description": "volume of player"
+        }
+    ],
+    "name": "Spotiy Media Widget",
+    "author": "Rosi2143",
+    "description": "A media controller with image art and playback buttons suitable for music using Spotiy"
+}
