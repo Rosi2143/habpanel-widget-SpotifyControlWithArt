@@ -49,12 +49,12 @@ features to come (if I find a nice way how to put it in)
   * Album Image
   * Media Artist
 * add the widget to your library
-  * **[habpanel-widget-SpotifyControlWithArt](https://github.com/Rosi2143/habpanel-widget-SpotifyControlWithArt)**
-* add the icons to the html directory of your openHAB installtion.
+  * [habpanel-widget-SpotifyControlWithArt](https://github.com/Rosi2143/habpanel-widget-SpotifyControlWithArt)
+* add the icons to the html directory of your openHAB installation - in subfolder spotify.
   * [Linux](https://www.openhab.org/docs/installation/linux.html#file-locations)
-    * /etc/openhab2
+    * /etc/openhab2/html/spotify
   * [Windows](https://www.openhab.org/docs/installation/windows.html#file-locations)
-    * C:\openHAB2\conf 
+    * C:\openHAB2\conf/html/spotify
   * others see [here](https://www.openhab.org/docs/installation/)
 
 I hope you like this widget.
